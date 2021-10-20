@@ -2,8 +2,9 @@ import logo from './logo.svg';
 import './App.css';
 import NavBar from './components/NavBar';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Gretting from './components/ItemListContainer';
-
+import Gretting from './components/gretting';
+import Counter from './components/counter';
+import './components/Elements.css';
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
       <NavBar/>
       </header>
       <Gretting/>
+      <Counter/>
     </div>
 
   );

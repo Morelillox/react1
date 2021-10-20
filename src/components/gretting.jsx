@@ -7,7 +7,7 @@ const Gretting = () => {
 
         <Container fluid>
         <Row>
-          <h1>Bienvenidos Amigos !!!</h1>
+          <h1 className="titulos">Bienvenidos Amigos !!!</h1>
         </Row>
       </Container>
     )
