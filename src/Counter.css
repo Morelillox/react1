@@ -1,0 +1,9 @@
+.divisor{
+    position: relative;
+    display: inline-block;
+}
+
+.btn{
+    padding: 10px;
+    margin: 5px;
+}

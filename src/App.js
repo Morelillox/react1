@@ -19,6 +19,7 @@ function App() {
       </header>
       <Gretting/>
       <Counter/>
+      
     </div>
 
   );
