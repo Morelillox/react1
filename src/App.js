@@ -6,6 +6,8 @@ import Gretting from './components/gretting';
 import Counter from './components/counter';
 import './components/Elements.css';
 import {BrowserRouter, Switch, Route} from "react-router-dom"
+import Cart from './components/Cart';
+import Nosotros from './components/Nosotros';
 
 
 function App() {
@@ -29,7 +31,15 @@ function App() {
       <Route exact path = "/productos">
       <Counter/>
       </Route>
+
+      <Route exact path="/cart">
+      <Cart/>
+      </Route>
       
+      <Route exact path="/Nosotros">
+      <Nosotros/>
+      </Route>
+
       </Switch>
     </BrowserRouter>
       

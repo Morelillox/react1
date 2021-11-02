@@ -13,6 +13,7 @@ const NavBar = () => {
           <Nav.Link href="home">Inicio</Nav.Link>
           <Nav.Link href="nosotros">Nosotros</Nav.Link>
           <Nav.Link href="productos">Productos</Nav.Link>
+          
           <CartWidget/>
         </Nav>
         </Container>

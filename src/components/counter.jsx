@@ -4,6 +4,8 @@ import {useEffect} from 'react'
 import { getFetch } from '../servicios/getFetch'
 import '../Counter.css';
 import '../Botones.css';
+import ItemCount from './ItemCount';
+
 
 const Counter = () => {
   const [product, setProduct] = useState([])
@@ -23,18 +25,15 @@ const Counter = () => {
      
   },[])   
 
-  const [count, setCount] = useState(0);
+ 
   
+  const [cant, setCant] = useState(1);
 
-  
-  let stock = 10
+	const onAdd = (count) => {
+			setCant(count)
+			alert(`Cantidad agregada al carrito es ${count}`)
+	}
 
- function Stock (){
-  if ([count]>{stock}){
-    alert("No se cuenta con stock disponible.")
-  } else {alert("Compra confirmada")}
-  
-} 
 
 
  
@@ -56,11 +55,9 @@ const Counter = () => {
                         {prod.price}
                         </Card.Text>
                        <Card.Footer> 
-                       <Card.Text>{count}</Card.Text>   
-                      <Button className="btn btn-custom"  onClick={() => setCount(count + 1)} >+</Button>
-                      <Button className="btn btn-custom" onClick={() => setCount(count - 1)} >-</Button>
-                      <br />
-                      <Button className="container btn btn-custom" onClick={(Stock)} >Confirmar Compra</Button>   
+                       {/* <Card.Text>{count}</Card.Text>   */} 
+                       <ItemCount stock={prod.stock} initial={cant} onAdd={onAdd} />
+                       <br />  
                       </Card.Footer>
                     </Card.Body>
                     </Card>

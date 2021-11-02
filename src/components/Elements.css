@@ -1,6 +1,16 @@
 .titulos{
+
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font: 300;
     text-shadow: pink;
     font-size: 50px;
+}
+
+.detalle{
+
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font: 300;
+    text-shadow: pink;
+    font-size: 20px;
+
 }
