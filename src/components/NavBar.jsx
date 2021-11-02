@@ -10,9 +10,9 @@ const NavBar = () => {
         <Container >
         <Navbar.Brand href="#home">Mil Budines</Navbar.Brand>
         <Nav className="me-auto" style={{display: "contents"}}>
-          <Nav.Link href="#home">Inicio</Nav.Link>
-          <Nav.Link href="#features">Nosotros</Nav.Link>
-          <Nav.Link href="#pricing">Productos</Nav.Link>
+          <Nav.Link href="home">Inicio</Nav.Link>
+          <Nav.Link href="nosotros">Nosotros</Nav.Link>
+          <Nav.Link href="productos">Productos</Nav.Link>
           <CartWidget/>
         </Nav>
         </Container>

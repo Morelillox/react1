@@ -12,9 +12,11 @@ const Counter = () => {
   useEffect(() => {
       getFetch
       .then( res => {        
-          console.log('llamada a api') // alguna accion con la respuesta  
+          console.log('llamada a api') // alguna accion con la respuesta 
+          console.log(res) 
           setProduct(res)
       })    
+      
       .catch(err => console.log(err))
       .finally(()=> setLoading(false))
      
@@ -22,6 +24,7 @@ const Counter = () => {
   },[])   
 
   const [count, setCount] = useState(0);
+  
 
   
   let stock = 10
@@ -34,8 +37,7 @@ const Counter = () => {
 } 
 
 
-  console.log(product)
-  
+ 
   return (
       <>
          <h2>Menu Dulce:</h2>          
