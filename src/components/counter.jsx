@@ -5,6 +5,8 @@ import { getFetch } from '../servicios/getFetch'
 import '../Counter.css';
 import '../Botones.css';
 import ItemCount from './ItemCount';
+import { Link } from "react-router-dom";
+
 
 
 const Counter = () => {
@@ -54,6 +56,9 @@ const Counter = () => {
                         <Card.Text>
                         {prod.price}
                         </Card.Text>
+                        <Button  className="btn btn-custom" as={Link} to="/ItemDetail" variant="primary">
+                          Detalles del Producto
+                        </Button>
                        <Card.Footer> 
                        {/* <Card.Text>{count}</Card.Text>   */} 
                        <ItemCount stock={prod.stock} initial={cant} onAdd={onAdd} />
