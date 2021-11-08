@@ -2,9 +2,10 @@ import ItemCount from "./ItemCount";
 import { Container, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { getFetch } from '../servicios/getFetch'
 
-function ItemDetail({ prod }) {
+
+
+function ItemDetail({ productos }) {
 
 	const [cant, setCant] = useState(1);
 
@@ -13,6 +14,8 @@ function ItemDetail({ prod }) {
 			alert(`Cantidad agregada al carrito es ${count}`)
 	}
 
+
+
 	return (
 		<>
 			<Container className="p-2">
@@ -20,20 +23,20 @@ function ItemDetail({ prod }) {
 				<Row className="gx-5  shadow p-3 mb-5 bg-white rounded">
 					<Col>
 						<img
-							src={prod.foto}
+							src={productos.foto}
 							className="containerImagenItem"
 							alt="Mil budines foto de producto"
 						/>
 					</Col>
 					<Col>
 						<div className="container">
-							<h3>{prod.name}</h3>
-							<h5>{prod.detalle}</h5>
-							<h3>$ {prod.price}</h3>
+							<h3>{productos.name}</h3>
+							<h5>{productos.detalle}</h5>
+							<h3>$ {productos.price}</h3>
 							<br />
-							<ItemCount stock={prod.stock} initial={cant} onAdd={onAdd} />
+							<ItemCount stock={productos.stock} initial={cant} onAdd={onAdd} />
 							<button type="button" class="btn btn-outline-dark btn-sm m-1" disabled>
-								{item.stock} cantidades disponibles
+								{productos.stock} cantidades disponibles
 							</button>
 							<br />
 							<Link to="/productos">

@@ -5,9 +5,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Gretting from './components/gretting';
 import Counter from './components/counter';
 import './components/Elements.css';
-import {BrowserRouter, Switch, Route} from "react-router-dom"
+import {Router, Switch, Route} from "react-router-dom"
 import Cart from './components/Cart';
 import Nosotros from './components/Nosotros';
+import ItemDetailContainer from './components/ItemDetailContainer';
+import ProductosList from './components/ProductosList';
 
 
 function App() {
@@ -18,30 +20,31 @@ function App() {
     <div className="App" >
       <header style={estilo}>
       <img src={logo} className="App-logo" alt="logo"  />
-      <NavBar/>
+      <Router>
+					<NavBar />
+					<Switch>
+						<Route exact path="/">
+							<Gretting/>
+						</Route>
+						<Route exact path="/productos/:productoId" component={ProductosList} />
+						<Route exact path="/item/:productosId" component={ItemDetailContainer} />
+						<Route exact path="/cart" component={Cart} />
+            <Route exact path="/Nosotros" component={Nosotros}/>
+					</Switch>
+				</Router>
       </header>
 
-      <BrowserRouter>
-        <Switch>
       
-      <Route exact path = "/home">         
-      <Gretting/>
-      </Route>
+
       
-      <Route exact path = "/productos">
+      
+      
+      
+    {/*   <Route exact path = "/productos">
       <Counter/>
-      </Route>
+      </Route> */}
 
-      <Route exact path="/cart">
-      <Cart/>
-      </Route>
-      
-      <Route exact path="/Nosotros">
-      <Nosotros/>
-      </Route>
-
-      </Switch>
-    </BrowserRouter>
+   
       
     </div>
 
