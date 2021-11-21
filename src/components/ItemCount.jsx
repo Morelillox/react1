@@ -1,64 +1,38 @@
 import {useState} from "react";
-import {Table, Button} from "react-bootstrap";
-import {Link} from "react-router-dom";
-import '../Botones.css';
-
-function InputCart({count, onAdd}) {
-	return (
-		<Button
-			className="btn btn-custom"
-			variant="success"
-			onClick={() => {
-				onAdd(count);
-			}}>
-			Agregar al Carrito
-		</Button>
-	);
-}
-
-const InputBuy = () => {
-	return (
-		<Button  className="btn btn-custom" as={Link} to="/cart" variant="primary">
-			Continuar la Compra
-		</Button>
-	);
-};
+import {Button} from "react-bootstrap";
+import Swing from 'react-reveal/Swing';
 
 function ItemCount({stock, initial, onAdd}) {
 	const [count, setCount] = useState(initial);
 
-	const [inputType, setInputType] = useState("input");
-
-	const handleInter = () => {
-		setInputType("buy");
-	};
-
 	return (
-		<>
-			<Table>
-				<td>
-					<Button
-						onClick={() => setCount(count - 1)}
-						variant="light"
-						size="lg"
-						className="btn btn-custom"
-						disabled={count === 1}>-</Button>
-				</td>
-				<td className="fs-3">{count}</td>
-				<td>
-					<Button
-						onClick={() => setCount(count + 1)}
-						variant="light"
-						size="lg"
-						color="danger"
-						className="btn btn-custom"
-						disabled={count === stock}>+</Button>
-				</td>
-			</Table>
-			<div className="text-center" onClick={handleInter}>
-				{inputType === "input" ? <InputCart count={count} onAdd={onAdd} /> : <InputBuy />}
+		<div>
+			<Button
+				onClick={() => setCount(count - 1)}
+				variant="light"
+				size="lg"
+				className="bi bi-dash-circle-fill"
+				disabled={count === 1}></Button>
+			<Swing spy={count}>
+				<label className="fs-3 mx-4 text-success">{count}</label>
+			</Swing>
+			<Button
+				onClick={() => setCount(count + 1)}
+				variant="light"
+				size="lg"
+				color="danger"
+				className="bi bi-plus-circle-fill"
+				disabled={count === stock}></Button>
+			<div className="text-center">
+				<Button
+					variant="success"
+					onClick={() => {
+						onAdd(count);
+					}}>
+					Agregar al Carrito
+				</Button>
 			</div>
-		</>
+		</div>
 	);
 }
 

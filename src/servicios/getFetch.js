@@ -1,6 +1,6 @@
 
 
-const productos = [
+const items = [
     { id: 1,tipo:"Alfajor" ,foto: "https://i.ibb.co/D7BJYRW/alfajos-coco.jpg" , name: "Alfajor de Coco", price: "$60" , stock:250, detalle: "Alfajor de coco, relleno de dulce de leche con escencia de vainilla .. Super Dulce"},
     { id: 2,tipo:"Budin",foto: "https://i.ibb.co/zSCGRD6/budin-frutosr.jpg" , name: "Budin Frutos Rojos", price: "$120" , stock:100, detalle: "Budin con notas dulces de fresa, frambuesa, mora y frutilla"},
     { id: 3,tipo:"Torta",foto: "https://i.ibb.co/4Yqj2ZV/lemon-pie.jpg" , name: "Lemond Pie", price: "$150" , stock:60, detalle: "El ideal para los amantes del Limon, toda el amor de mil budines + limon ... ¿Que puede fallar?"},
@@ -17,7 +17,7 @@ const productos = [
  export const getFetch = new Promise((resolve, reject)=>{
     // tareas asincronicas acciones
     setTimeout(()=>{
-        resolve(productos)
+        resolve(items)
     }, 3000)
     //reject('400 not found')
 })

@@ -1,20 +1,27 @@
-import { Navbar } from 'react-bootstrap';
-import { Nav } from 'react-bootstrap';
-import { Container } from 'react-bootstrap';
-import CartWidget from './CartWidget.jsx';
+//Component NavBar
+import {Link} from "react-router-dom";
+import {Navbar, Nav, Container} from "react-bootstrap";
+import CardWidget from "./CartWidget";
 
 const NavBar = () => {
   
     return(
         <Navbar bg="dark" variant="dark" >
         <Container >
-        <Navbar.Brand href="#home">Mil Budines</Navbar.Brand>
+        
         <Nav className="me-auto" style={{display: "contents"}}>
-          <Nav.Link href="home">Inicio</Nav.Link>
-          <Nav.Link href="nosotros">Nosotros</Nav.Link>
-          <Nav.Link href="productos">Productos</Nav.Link>
+		
+		<Link className="nav-link" to="/">Mil Budines</Link>
+		<Link className="nav-link"  to="/category/todos">Productos</Link>
+		<Link className="nav-link"  to="/category/nosotros">Nosotros</Link>
+		<Link className="nav-link"  to="/category/Torta">Tortas</Link>
+		<Link className="nav-link"  to="/category/Budin">Budines</Link>
+		<Link className="nav-link"  to="/category/Alfajor">Alfajores</Link>
+			
           
-          <CartWidget/>
+        <Link to="/cart" className="nav-link ms-5 ps-5">
+				<CardWidget />
+		</Link>
         </Nav>
         </Container>
       </Navbar>
@@ -22,4 +29,5 @@ const NavBar = () => {
     )
 }
 
-export default NavBar
+export default NavBar;
+
